@@ -1,0 +1,45 @@
+package array.com;
+
+import java.util.Scanner;
+
+public class Palindrom {
+
+	public static void main(String[] args) {
+		//System.out.println("hello array");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the size of arrylength :");
+		int num =sc.nextInt();
+		int temp = num;
+		int count = 0;
+		while(temp>0){
+			count++;
+			temp = temp/10;
+		}
+		int []arr = new int[count];
+		temp = num;
+		for(int i=count-1; i>=0 ;i++) {
+			arr[i] = temp%10;
+			temp = temp/10;
+		}
+		int start = 0;
+		int end = count-1;
+		boolean palandrom = true;
+		while(start < end) {
+			if(arr[start] != arr[end]) {
+				palandrom = false;
+				break;
+			}
+			start++;
+			end--;
+			if(palandrom) {
+				System.out.println("palandrom");
+			}
+			else {
+				System.out.println("notpalandrom");
+			}
+		}
+
+
+	}
+
+}
